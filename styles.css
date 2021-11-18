@@ -34,13 +34,7 @@ body{
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.calculator-whole > button:active{
-    background-color: rgba(255, 255, 255, 1);
-}
 
-.calculator-whole > button:default{
-    background-color: rgba(255, 255, 255, 0.75);
-}
 
 .span-two{
     grid-column: span 2;
