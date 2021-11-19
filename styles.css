@@ -51,8 +51,7 @@ body{
     word-wrap: break-word;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    word-break: break-all;
 }
 
 .previous-operand{
