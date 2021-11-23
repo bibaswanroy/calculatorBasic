@@ -72,18 +72,22 @@ function eVal() {
             case "*":
                 current.innerHTML = Number(previous.innerHTML) * Number(current.innerHTML);
                 previous.innerHTML = "0";
+                operator.innerHTML = "...";
                 break;
             case "+":
                 current.innerHTML = Number(previous.innerHTML) + Number(current.innerHTML);
                 previous.innerHTML = "0";
+                operator.innerHTML = "...";
                 break;
             case "-":
                 current.innerHTML = Number(previous.innerHTML) - Number(current.innerHTML);
                 previous.innerHTML = "0";
+                operator.innerHTML = "...";
                 break;
             case "/":
                 current.innerHTML = Number(previous.innerHTML) / Number(current.innerHTML);
                 previous.innerHTML = "0";
+                operator.innerHTML = "...";
                 break;
         }
     }
