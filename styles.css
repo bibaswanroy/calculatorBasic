@@ -54,10 +54,10 @@ body{
     border-top-right-radius: 5px;
 }
 
-.previous-operand, .operand{
+.previous-operand span{
     font-weight: bold;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 2rem;
+    font-size: 20px;
 }
 
 .current-operand{
