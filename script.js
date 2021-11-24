@@ -18,7 +18,7 @@ function showNum(number) {
 
 function delNumWhole() {
     document.getElementById("current-operand").innerHTML = "0";
-    document.getElementById("previous-operand").innerHTML = "0";
+    document.getElementById("num").innerHTML = "0";
     document.getElementById("operand").innerHTML = "...";
 }
 
@@ -32,7 +32,7 @@ function delNum() {
 
 function operationNum(op) {
     var current = document.getElementById("current-operand");
-    var previous = document.getElementById("previous-operand");
+    var previous = document.getElementById("num");
     var operator = document.getElementById("operand");
 
     if (previous.innerHTML == "0") {
@@ -65,7 +65,7 @@ function operationNum(op) {
 
 function eVal() {
     var current = document.getElementById("current-operand");
-    var previous = document.getElementById("previous-operand");
+    var previous = document.getElementById("num");
     var operator = document.getElementById("operand");
     if (operator.innerHTML != "...") {
         switch (operator.innerHTML) {
