@@ -19,7 +19,7 @@ function showNum(number) {
 function delNumWhole() {
     document.getElementById("current-operand").innerHTML = "0";
     document.getElementById("num").innerHTML = "0";
-    document.getElementById("operand").innerHTML = "...";
+    document.getElementById("operand").innerHTML = "";
 }
 
 function delNum() {
@@ -67,27 +67,27 @@ function eVal() {
     var current = document.getElementById("current-operand");
     var previous = document.getElementById("num");
     var operator = document.getElementById("operand");
-    if (operator.innerHTML != "...") {
+    if (operator.innerHTML != "") {
         switch (operator.innerHTML) {
             case "*":
                 current.innerHTML = Number(previous.innerHTML) * Number(current.innerHTML);
                 previous.innerHTML = "0";
-                operator.innerHTML = "...";
+                operator.innerHTML = "";
                 break;
             case "+":
                 current.innerHTML = Number(previous.innerHTML) + Number(current.innerHTML);
                 previous.innerHTML = "0";
-                operator.innerHTML = "...";
+                operator.innerHTML = "";
                 break;
             case "-":
                 current.innerHTML = Number(previous.innerHTML) - Number(current.innerHTML);
                 previous.innerHTML = "0";
-                operator.innerHTML = "...";
+                operator.innerHTML = "";
                 break;
             case "/":
                 current.innerHTML = Number(previous.innerHTML) / Number(current.innerHTML);
                 previous.innerHTML = "0";
-                operator.innerHTML = "...";
+                operator.innerHTML = "";
                 break;
         }
     }
