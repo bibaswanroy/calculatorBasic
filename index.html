@@ -17,7 +17,7 @@
 
 <body>
     <div class="container-md">
-        <div class="calculator-whole">
+        <div class="calculator-whole" id="calculator-whole">
             <div class="output">
                 <div class="previous-operand">
                     <span class="num" id="num">0</span>
@@ -25,8 +25,8 @@
                 </div>
                 <div class="current-operand" id="current-operand">0</div>
             </div>
-
-            <button class="span-two" onclick="delNumWhole()">AC</button>
+            <button onclick="changeStyle()">Sci</button>
+            <button onclick="delNumWhole()">AC</button>
             <button onclick="delNum()">DEL</button>
             <button onclick="operationNum(this)">/</button>
             <button onclick="showNum(this)">7</button>
@@ -41,6 +41,12 @@
             <button onclick="showNum(this)">2</button>
             <button onclick="showNum(this)">3</button>
             <button onclick="operationNum(this)">-</button>
+            <div id="hide">
+                <button onclick="operationNum(this)">x^2</button>
+                <button onclick="operationNum(this)">x^3</button>
+                <button onclick="operationNum(this)">^</button>
+                <button onclick="operationNum(this)">log</button>
+            </div>
             <button id="left" onclick="showNum(this)">0</button>
             <button onclick="showNum(this)">.</button>
             <button class="span-two" id="right" onclick="eVal()">=</button>
