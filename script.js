@@ -34,32 +34,136 @@ function operationNum(op) {
     var current = document.getElementById("current-operand");
     var previous = document.getElementById("num");
     var operator = document.getElementById("operand");
-
-    if (previous.innerHTML == "0") {
-        previous.innerHTML = current.innerHTML;
-        current.innerHTML = "0";
+    if (op.innerHTML != "x^2" && op.innerHTML != "x^3" && op.innerHTML != "log") {
+        if (previous.innerHTML == "0") {
+            previous.innerHTML = current.innerHTML;
+            current.innerHTML = "0";
+        }
+        else {
+            switch (operator.innerHTML) {
+                case "*":
+                    previous.innerHTML = (previous.innerHTML) * (current.innerHTML);
+                    current.innerHTML = "0";
+                    break;
+                case "+":
+                    previous.innerHTML = (previous.innerHTML) + (current.innerHTML);
+                    current.innerHTML = "0";
+                    break;
+                case "-":
+                    previous.innerHTML = (previous.innerHTML) - (current.innerHTML);
+                    current.innerHTML = "0";
+                    break;
+                case "/":
+                    previous.innerHTML = (previous.innerHTML) / (current.innerHTML);
+                    current.innerHTML = "0";
+                    break;
+                case "^":
+                    previous.innerHTML = Math.pow((previous.innerHTML), (current.innerHTML));
+                    current.innerHTML = "0";
+                    break;
+            }
+        }
+        operator.innerHTML = op.innerHTML;
     }
     else {
-        switch (operator.innerHTML) {
-            case "*":
-                previous.innerHTML = Number(previous.innerHTML) * Number(current.innerHTML);
-                current.innerHTML = "0";
-                break;
-            case "+":
-                previous.innerHTML = Number(previous.innerHTML) + Number(current.innerHTML);
-                current.innerHTML = "0";
-                break;
-            case "-":
-                previous.innerHTML = Number(previous.innerHTML) - Number(current.innerHTML);
-                current.innerHTML = "0";
-                break;
-            case "/":
-                previous.innerHTML = Number(previous.innerHTML) / Number(current.innerHTML);
-                current.innerHTML = "0";
-                break;
+        if (previous.innerHTML == "0") {
+            switch (op.innerHTML) {
+                case "x^2":
+                    current.innerHTML = Math.pow(current.innerHTML, 2);
+                    previous.innerHTML = "0";
+                    break;
+                case "x^3":
+                    current.innerHTML = Math.pow(current.innerHTML, 3);
+                    previous.innerHTML = "0";
+                    break;
+                case "log":
+                    current.innerHTML = Math.log(current.innerHTML);
+                    previous.innerHTML = "0";
+                    break;
+            }
         }
+        else {
+            switch (operator.innerHTML) {
+                case "*":
+                    switch (op.innerHTML) {
+                        case "x^2":
+                            current.innerHTML = previous.innerHTML * Math.pow(current.innerHTML, 2);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "x^3":
+                            current.innerHTML = previous.innerHTML * Math.pow(current.innerHTML, 3);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "log":
+                            current.innerHTML = previous.innerHTML * Math.log(current.innerHTML);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                    }
+                    break;
+                case "+":
+                    switch (op.innerHTML) {
+                        case "x^2":
+                            current.innerHTML = previous.innerHTML + Math.pow(current.innerHTML, 2);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "x^3":
+                            current.innerHTML = previous.innerHTML + Math.pow(current.innerHTML, 3);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "log":
+                            current.innerHTML = previous.innerHTML + Math.log(current.innerHTML);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                    }
+                    break;
+                case "/":
+                    switch (op.innerHTML) {
+                        case "x^2":
+                            current.innerHTML = previous.innerHTML / Math.pow(current.innerHTML, 2);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "x^3":
+                            current.innerHTML = previous.innerHTML / Math.pow(current.innerHTML, 3);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "log":
+                            current.innerHTML = previous.innerHTML / Math.log(current.innerHTML);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                    }
+                    break;
+                case "-":
+                    switch (op.innerHTML) {
+                        case "x^2":
+                            current.innerHTML = previous.innerHTML - Math.pow(current.innerHTML, 2);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "x^3":
+                            current.innerHTML = previous.innerHTML - Math.pow(current.innerHTML, 3);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                        case "log":
+                            current.innerHTML = previous.innerHTML - Math.log(current.innerHTML);
+                            previous.innerHTML = "0";
+                            operator.innerHTML = "";
+                            break;
+                    }
+                    break;
+            }
+        }
+
     }
-    operator.innerHTML = op.innerHTML;
 
 }
 
@@ -70,25 +174,41 @@ function eVal() {
     if (operator.innerHTML != "") {
         switch (operator.innerHTML) {
             case "*":
-                current.innerHTML = Number(previous.innerHTML) * Number(current.innerHTML);
+                current.innerHTML = (previous.innerHTML) * (current.innerHTML);
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
             case "+":
-                current.innerHTML = Number(previous.innerHTML) + Number(current.innerHTML);
+                current.innerHTML = (previous.innerHTML) + (current.innerHTML);
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
             case "-":
-                current.innerHTML = Number(previous.innerHTML) - Number(current.innerHTML);
+                current.innerHTML = (previous.innerHTML) - (current.innerHTML);
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
             case "/":
-                current.innerHTML = Number(previous.innerHTML) / Number(current.innerHTML);
+                current.innerHTML = (previous.innerHTML) / (current.innerHTML);
+                previous.innerHTML = "0";
+                operator.innerHTML = "";
+                break;
+            case "^":
+                previous.innerHTML = Math.pow((previous.innerHTML), (current.innerHTML));
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
         }
+    }
+}
+
+function changeStyle() {
+    if (document.getElementById("hide")) {
+        document.getElementById("calculator-whole").style.gridTemplateRows = "minmax(94px, auto) repeat(6, 80px)";
+        document.getElementById("hide").id = "view";
+    }
+    else {
+        document.getElementById("calculator-whole").style.gridTemplateRows = "minmax(94px, auto) repeat(5, 80px)";
+        document.getElementById("view").id = "hide";
     }
 }
