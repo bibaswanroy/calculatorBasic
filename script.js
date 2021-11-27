@@ -194,7 +194,7 @@ function eVal() {
                 operator.innerHTML = "";
                 break;
             case "^":
-                previous.innerHTML = Math.pow((previous.innerHTML), (current.innerHTML));
+                current.innerHTML = Math.pow((previous.innerHTML), (current.innerHTML));
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
