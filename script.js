@@ -42,23 +42,23 @@ function operationNum(op) {
         else {
             switch (operator.innerHTML) {
                 case "*":
-                    previous.innerHTML = (previous.innerHTML) * (current.innerHTML);
+                    previous.innerHTML = Number(previous.innerHTML) * Number(current.innerHTML);
                     current.innerHTML = "0";
                     break;
                 case "+":
-                    previous.innerHTML = (previous.innerHTML) + (current.innerHTML);
+                    previous.innerHTML = Number(previous.innerHTML) + Number(current.innerHTML);
                     current.innerHTML = "0";
                     break;
                 case "-":
-                    previous.innerHTML = (previous.innerHTML) - (current.innerHTML);
+                    previous.innerHTML = Number(previous.innerHTML) - Number(current.innerHTML);
                     current.innerHTML = "0";
                     break;
                 case "/":
-                    previous.innerHTML = (previous.innerHTML) / (current.innerHTML);
+                    previous.innerHTML = Number(previous.innerHTML) / Number(current.innerHTML);
                     current.innerHTML = "0";
                     break;
                 case "^":
-                    previous.innerHTML = Math.pow((previous.innerHTML), (current.innerHTML));
+                    previous.innerHTML = Math.pow(Number(previous.innerHTML), Number(current.innerHTML));
                     current.innerHTML = "0";
                     break;
             }
@@ -69,15 +69,15 @@ function operationNum(op) {
         if (previous.innerHTML == "0") {
             switch (op.innerHTML) {
                 case "x^2":
-                    current.innerHTML = Math.pow(current.innerHTML, 2);
+                    current.innerHTML = Math.pow(Number(current.innerHTML), 2);
                     previous.innerHTML = "0";
                     break;
                 case "x^3":
-                    current.innerHTML = Math.pow(current.innerHTML, 3);
+                    current.innerHTML = Math.pow(Number(current.innerHTML), 3);
                     previous.innerHTML = "0";
                     break;
                 case "log":
-                    current.innerHTML = Math.log(current.innerHTML);
+                    current.innerHTML = Math.log(Number(current.innerHTML));
                     previous.innerHTML = "0";
                     break;
             }
@@ -87,17 +87,17 @@ function operationNum(op) {
                 case "*":
                     switch (op.innerHTML) {
                         case "x^2":
-                            current.innerHTML = previous.innerHTML * Math.pow(current.innerHTML, 2);
+                            current.innerHTML = Number(previous.innerHTML) * Math.pow(Number(current.innerHTML), 2);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "x^3":
-                            current.innerHTML = previous.innerHTML * Math.pow(current.innerHTML, 3);
+                            current.innerHTML = Number(previous.innerHTML) * Math.pow(Number(current.innerHTML), 3);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "log":
-                            current.innerHTML = previous.innerHTML * Math.log(current.innerHTML);
+                            current.innerHTML = Number(previous.innerHTML) * Math.log(Number(current.innerHTML));
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
@@ -106,17 +106,17 @@ function operationNum(op) {
                 case "+":
                     switch (op.innerHTML) {
                         case "x^2":
-                            current.innerHTML = previous.innerHTML + Math.pow(current.innerHTML, 2);
+                            current.innerHTML = Number(previous.innerHTML) + Math.pow(Number(current.innerHTML), 2);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "x^3":
-                            current.innerHTML = previous.innerHTML + Math.pow(current.innerHTML, 3);
+                            current.innerHTML = Number(previous.innerHTML) + Math.pow(Number(current.innerHTML), 3);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "log":
-                            current.innerHTML = previous.innerHTML + Math.log(current.innerHTML);
+                            current.innerHTML = Number(previous.innerHTML) + Math.log(Number(current.innerHTML));
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
@@ -125,17 +125,17 @@ function operationNum(op) {
                 case "/":
                     switch (op.innerHTML) {
                         case "x^2":
-                            current.innerHTML = previous.innerHTML / Math.pow(current.innerHTML, 2);
+                            current.innerHTML = Number(previous.innerHTML) / Math.pow(Number(current.innerHTML), 2);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "x^3":
-                            current.innerHTML = previous.innerHTML / Math.pow(current.innerHTML, 3);
+                            current.innerHTML = Number(previous.innerHTML) / Math.pow(Number(current.innerHTML), 3);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "log":
-                            current.innerHTML = previous.innerHTML / Math.log(current.innerHTML);
+                            current.innerHTML = Number(previous.innerHTML) / Math.log(current.innerHTML);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
@@ -144,17 +144,17 @@ function operationNum(op) {
                 case "-":
                     switch (op.innerHTML) {
                         case "x^2":
-                            current.innerHTML = previous.innerHTML - Math.pow(current.innerHTML, 2);
+                            current.innerHTML = Number(previous.innerHTML) - Math.pow(Number(current.innerHTML), 2);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "x^3":
-                            current.innerHTML = previous.innerHTML - Math.pow(current.innerHTML, 3);
+                            current.innerHTML = Number(previous.innerHTML) - Math.pow(Number(current.innerHTML), 3);
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
                         case "log":
-                            current.innerHTML = previous.innerHTML - Math.log(current.innerHTML);
+                            current.innerHTML = Number(previous.innerHTML) - Math.log(Number(current.innerHTML));
                             previous.innerHTML = "0";
                             operator.innerHTML = "";
                             break;
@@ -174,27 +174,27 @@ function eVal() {
     if (operator.innerHTML != "") {
         switch (operator.innerHTML) {
             case "*":
-                current.innerHTML = (previous.innerHTML) * (current.innerHTML);
+                current.innerHTML = Number(previous.innerHTML) * Number(current.innerHTML);
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
             case "+":
-                current.innerHTML = (previous.innerHTML) + (current.innerHTML);
+                current.innerHTML = Number(previous.innerHTML) + Number(current.innerHTML);
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
             case "-":
-                current.innerHTML = (previous.innerHTML) - (current.innerHTML);
+                current.innerHTML = Number(previous.innerHTML) - Number(current.innerHTML);
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
             case "/":
-                current.innerHTML = (previous.innerHTML) / (current.innerHTML);
+                current.innerHTML = Number(previous.innerHTML) / Number(current.innerHTML);
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
             case "^":
-                current.innerHTML = Math.pow((previous.innerHTML), (current.innerHTML));
+                current.innerHTML = Math.pow(Number(previous.innerHTML), Number(current.innerHTML));
                 previous.innerHTML = "0";
                 operator.innerHTML = "";
                 break;
